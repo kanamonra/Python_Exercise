@@ -1,12 +1,19 @@
 
-# pokemon game v0.2
+# pokemon game v0.3
 # 중복코드 제거, getter setter
+#__hiddenfield used
 
 class Pokemon:
     def __init__(self, owner, skills):
-        self.hidden_owner = owner
+        self.hidden_owner = owner  # almost same as private
         self.skills = skills.split('/')
         print(f"포켓몬 생성 :", end=' ')
+    @property
+    def owner(self):
+        return self.__hidden_owner
+    @property
+    def owner(self, owner):
+        self.__hidden_owner = owner
 
     def get_owner(self):
         return self.hidden_owner
@@ -70,6 +77,7 @@ while True:
         s = input('사용 가능한 기술 입력(/로 구분하여 입력) :')
         if pokemon == '1':
             p = Pikachu(n, s)
+            p.__hidden_owner = 'Salsa'
         elif pokemon == '2':
             p = Ggoboogi(n, s)
         elif pokemon == '3':
