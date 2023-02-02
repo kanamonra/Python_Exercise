@@ -1,38 +1,23 @@
-# 10.4
-class Element:
-    def __init__(self, name, symbol, number):
-        self.hidden_name = name
-        self.hidden_symbol = symbol
-        self.hidden_number = number
-
-    # 10.7에 따라
-    @property
-    def name(self):
-        return self.hidden_name
-
-    @property
-    def symbol(self):
-        return self.symbol
-
-    @property
-    def number(self):
-        return self.hidden_number
-
-    # 10.6 때...
-    # def dump(self):
-    #    print(self.name, self.symbol, self.number)
-
-    # 10.7에 따라 바뀜
-    def __str__(self):
-        print(self.name, self.symbol, self.number)
+# 10.9
+class Bear:
+    def eats(self):
+        return 'berries'
 
 
-# 10.5 // 10.7
-hydro = Element('Hydrogen', 'H', 1)
+class Rabbit:
+    def eats(self):
+        return 'clover'
 
-# 10.6
-el_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': '1'}
-# hydro.dump()
 
-# 10.7
-print(hydro)
+class Octothorpe:
+    def eats(self):
+        return 'campers'
+
+
+bear1 = Bear()
+rabbit1 = Rabbit()
+octo1 = Octothorpe()
+
+print("Bear eats:", bear1.eats())
+print("Rabbit eats:", rabbit1.eats())
+print("Octothorpe eats:", octo1.eats())
