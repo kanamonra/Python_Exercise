@@ -1,32 +1,38 @@
-# 10.1
+# 10.4
+class Element:
+    def __init__(self, name, symbol, number):
+        self.hidden_name = name
+        self.hidden_symbol = symbol
+        self.hidden_number = number
 
-# 아무 내용 없는 클래스랑 example 객체 생성
-class thing:
-    pass
+    # 10.7에 따라
+    @property
+    def name(self):
+        return self.hidden_name
+
+    @property
+    def symbol(self):
+        return self.symbol
+
+    @property
+    def number(self):
+        return self.hidden_number
+
+    # 10.6 때...
+    # def dump(self):
+    #    print(self.name, self.symbol, self.number)
+
+    # 10.7에 따라 바뀜
+    def __str__(self):
+        print(self.name, self.symbol, self.number)
 
 
-example = thing()
+# 10.5 // 10.7
+hydro = Element('Hydrogen', 'H', 1)
 
-# 출력한다
-print(thing)  # result: <class '__main__.thing'>
-print(example)  # <__main__.thing object at 0x0000023C02B0FBD0>
+# 10.6
+el_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': '1'}
+# hydro.dump()
 
-
-# 10.2 Thing2 클래스 만들고 letters 객체를 만들고 출력하기
-class thing2:
-    letters = 'abc'
-
-
-print(thing2.letters)  # result: abc
-
-
-# 10.3
-# things3 클래스를 만들고 인스턴스 객체의 letters 출력한다.
-
-class things3:
-    pass
-
-
-last = things3()
-last.letter = 'xyz'
-print(last.letter)  # result: xyz
+# 10.7
+print(hydro)
