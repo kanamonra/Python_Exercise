@@ -1,9 +1,12 @@
 
-# pokemon game v0.3
+# pokemon game v0.4
 # 중복코드 제거, getter setter
-#__hiddenfield used
+# counting pokemon
+
+
 
 class Pokemon:
+    count = 0
     def __init__(self, owner, skills):
         self.hidden_owner = owner  # almost same as private
         self.skills = skills.split('/')
@@ -67,6 +70,7 @@ class Pairi(Pokemon):  # inheritance
 
 
 while True:
+    print(f"총 {Pokemon.count}마리 포켓몬이 생성되었습니다.")
     menu = input('1) 포켓몬 생성  2) 프로그램 종료 : ')
     if menu == '2':
         print('프로그램을 종료합니다')
